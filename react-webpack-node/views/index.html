@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>籽微贷</title>
+    <meta name="keywords" content="" >
+    <meta name="description" content="" >
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" >
+    <meta name="renderer" content="webkit"> <!-- 360默认用极速核 -->
+    <!-- <meta name="renderer" content="ie-comp"> --> <!-- 360默认用ie兼容内核 -->
+    <!-- <meta name="renderer" content="ie-stand"> --> <!-- 360默认用ie标准内核 -->
+    <link rel="shortcut icon" href="/static/img/favicon.png">
+    <link rel="stylesheet" href="/static/css/common.css">
+    <link rel="stylesheet" href="/static/css/page/home.css">
+    <link rel="stylesheet" href="/static/lib/swiper/swiper-3.4.2.min.css">
+    <!--[if lt IE 9]>
+    <script src="/static/lib/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <!--[if lte IE 8]><p style="position: relative;text-align: center;padding: 12px 0;background-color: #F44336;color: #ffffff;font-size: 16px;z-index: 9999;">您的浏览器版本过旧，为了您的安全和体验，请升级到高版本浏览器，或者安装chrome浏览器，或者360浏览器选择急速模式</p><![endif]-->
+    <header id="header">
+        <div class="top center row">
+            <div><span>服务热线：</span><a href="tel:400-852-2220" rel="nofollow" >400-852-2220</a></div>
+            <div class="right">
+                <a href="/login">登录</a>
+                <a href="/register">注册</a>
+                <span class="download-app">下载App</span>
+            </div>
+        </div>
+        <div class="menu center">
+            <a href="" class="logo">
+                籽微贷_籽因有你，成就小微
+                <!-- <img src="/static/img/home/logo.png" alt="籽微贷_籽因有你，成就小微"> -->
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="javascript:void(0)" class="selected">首页</a></li>
+                    <li><a href="javascript:void(0)">我要投资</a></li>
+                    <li><a href="javascript:void(0)">我要借款</a></li>
+                    <li><a href="javascript:void(0)">我要担保</a></li>
+                    <li><a href="javascript:void(0)">新手指引</a></li>
+                    <li><a href="javascript:void(0)">信息披露</a></li>
+                    <li><a href="javascript:void(0)">关于我们</a></li>
+                    <li><a href="javascript:void(0)">我的账户</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="banner">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="/static/img/home/banner.png" alt=""></div>
+                <div class="swiper-slide"><img src="/static/img/home/banner2.png" alt=""></div>
+                <div class="swiper-slide"><img src="/static/img/home/banner3.png" alt=""></div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="position">
+            <div class="banner-tips">
+                <p>科技链接智慧</p>
+                <p><span>籽微“带”</span>你开启全新金融体验</p>
+            </div>
+            <div class="guide-box">
+                <div class="bg"></div>
+                <div class="content">
+                    <p>预期年化收益率</p>
+                    <p class="rate">8<span>%</span>~16<span>%</span></p>
+                    <p class="tips">新用户注册即送68元红包</p>
+                    <div><a href="#" class="btn btn-effect">立即注册</a></div>
+                    <p class="other">已有账号，<a href="/login">马上登录</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="notice">
+        <div class="center">
+            <div class="n-icon"><img src="/static/img/icon/notice.png" width="20" alt="公告"></div>
+            <div class="n-content">
+                <ul class="n-detail">
+                    <li><a target="_blank" href="javascript:void(0)">平台公告公共1</a></li>
+                    <li><a target="_blank" href="javascript:void(0)">平台公告公共2</a></li>
+                    <li><a target="_blank" href="javascript:void(0)">平台公告公共3</a></li>
+                </ul>
+            </div>
+            <div class="n-more"><a href="javascript:void(0)">更多&gt;&gt;</a></div>
+        </div>
+    </div>
+
+    <div class="main center">
+        <div class="section row">
+           <div class="about-platform block">
+               <div class="platform-data row">
+                   <div class="col-33">
+                       <p>累计注册人数</p>
+                       <p><b id="p_number">0</b><span> 人</span></p>
+                   </div>
+                   <div class="col-33">
+                       <p>累计交易金额</p>
+                       <p><span>¥ </span><b id="amount">0</b></p>
+                   </div>
+                   <div class="col-33">
+                       <p>为用户赚取收益</p>
+                       <p><span>¥ </span><b id="benefit">0</b></p>
+                   </div>
+               </div>
+               <div class="safeguard row">
+                   <div class="col-25">
+                       <img src="/static/img/home/safe1.png" alt="金融智慧">
+                       <span>金融智慧</span>
+                        <p>融合国际银行金融智慧及持续多年本地中小微企业服务经验</p>
+                   </div>
+                   <div class="col-25">
+                       <img src="/static/img/home/safe1.png" alt="创新技术">
+                       <span>创新技术</span>
+                       <p>运用最新科技,改变金融体验,推动普惠金融全面发展</p>
+                   </div>
+                   <div class="col-25">
+                       <img src="/static/img/home/safe1.png" alt="专业管理">
+                       <span>专业管理</span>
+                       <p>科技智慧完美融合,体系化管理架构,全方位驱动企业发展</p>
+                    </div>
+                   <div class="col-25">
+                       <img src="/static/img/home/safe1.png" alt="多重保障">
+                       <span>多重保障</span>
+                       <p>自主研发风控体系、全程加密技术及监控,提供全方位保障</p>
+                   </div>
+               </div>
+           </div>
+           <div class="activity block">
+               <img src="/static/img/home/activity.jpg" alt="籽微贷">
+           </div>
+        </div>
+
+        <div class="section row">
+            <div class="recommend box">
+              <div class="top row">
+                  <div>
+                      <strong class="title">今日推荐</strong>
+                      <span class="tips">注册就送68元新手红包</span>
+                  </div>
+                  <div class="right">
+                      <ul class="invest-detail">
+                          <li>1分钟前 138***1234 成功投资  ¥5,000.00</li>
+                          <li>2分钟前 138***1234 成功投资  ¥5,000.00</li>
+                          <li>3分钟前 138***1234 成功投资  ¥5,000.00</li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="content block">
+                  <div class="project-title">
+                      <strong class="title">籽商贷</strong>
+                      <span class="tips">短期贷款产品，按月付息到期还款，用于支持小微企业的一次性商业需求</span>
+                  </div>
+                  <div class="project-detail row">
+                      <div class="rate">
+                          <p class="txt">13.0 <span>%</span></p>
+                          <p class="desc">年化利率</p>
+                      </div>
+                      <div class="term">
+                          <p class="txt">6 <span>个月</span></p>
+                          <p class="desc">借款期限</p>
+                      </div>
+                      <div class="state">
+                          <div class="bid-progress">
+                              <p>剩余投资金额：<span class="amount">100,000.00</span> 元</p>
+                              <div class="progress-bar">
+                                  <div class="pb-bg"></div>
+                                  <div class="pb-percent" style="width: 50%"></div>
+                              </div>
+                          </div>
+                      </div>
+                      <div><a href="javascript:void(0)" class="btn btn-effect">立即投资</a></div>
+                  </div>
+              </div>
+               <div class="invest-process block">
+
+               </div>
+            </div>
+            <div class="recommend-more block">
+
+            </div>
+        </div>
+
+        <div class="section box">
+            <div class="top row">
+                <div>
+                    <strong class="title">散标投资</strong>
+                    <span class="tips">优质资产，稳健增值</span>
+                </div>
+                <div class="right"><a href="" class="more">更多</a></div>
+            </div>
+            <div class="project-item row">
+                <div class="block">
+                    <p class="title">国际贸易公司扩大国际贸易公司扩大</p>
+                    <div class="detail row">
+                        <div class="rate col-50">
+                            <p class="txt">13.0 <span>%</span></p>
+                            <p class="desc">年化利率</p>
+                        </div>
+                        <div class="term col-50">
+                            <p class="txt">6 <span>个月</span></p>
+                            <p class="desc">借款期限</p>
+                        </div>
+                    </div>
+                    <div class="bid-progress">
+                        <p>剩余投资金额：<span class="amount">100,000.00</span> 元</p>
+                        <div class="progress-bar">
+                            <div class="pb-bg"></div>
+                            <div class="pb-percent" style="width: 50%"></div>
+                        </div>
+                    </div>
+                    <div><a href="javascript:void(0)"  class="btn btn-effect">立即投资</a></div>
+                </div>
+                <div class="block">
+                    <p class="title">国际贸易公司扩大国际贸易公司扩大</p>
+                    <div class="detail row">
+                        <div class="rate col-50">
+                            <p class="txt">13.0 <span>%</span></p>
+                            <p class="desc">年化利率</p>
+                        </div>
+                        <div class="term col-50">
+                            <p class="txt">6 <span>个月</span></p>
+                            <p class="desc">借款期限</p>
+                        </div>
+                    </div>
+                    <div class="bid-progress">
+                        <p>剩余投资金额：<span class="amount">100,000.00</span> 元</p>
+                        <div class="progress-bar">
+                            <div class="pb-bg"></div>
+                            <div class="pb-percent" style="width: 50%"></div>
+                        </div>
+                    </div>
+                    <div><a href="javascript:void(0)"  class="btn btn-effect">立即投资</a></div>
+                </div>
+                <div class="block">
+                    <p class="title">国际贸易公司扩大国际贸易公司扩大</p>
+                    <div class="detail row">
+                        <div class="rate col-50">
+                            <p class="txt">13.0 <span>%</span></p>
+                            <p class="desc">年化利率</p>
+                        </div>
+                        <div class="term col-50">
+                            <p class="txt">6 <span>个月</span></p>
+                            <p class="desc">借款期限</p>
+                        </div>
+                    </div>
+                    <div class="bid-progress">
+                        <p>剩余投资金额：<span class="amount">100,000.00</span> 元</p>
+                        <div class="progress-bar">
+                            <div class="pb-bg"></div>
+                            <div class="pb-percent" style="width: 50%"></div>
+                        </div>
+                    </div>
+                    <div><a href="javascript:void(0)"  class="btn btn-effect">立即投资</a></div>
+                </div>
+                <div class="block">
+                    <p class="title">国际贸易公司扩大国际贸易公司扩大</p>
+                    <div class="detail row">
+                        <div class="rate col-50">
+                            <p class="txt">13.0 <span>%</span></p>
+                            <p class="desc">年化利率</p>
+                        </div>
+                        <div class="term col-50">
+                            <p class="txt">6 <span>个月</span></p>
+                            <p class="desc">借款期限</p>
+                        </div>
+                    </div>
+                    <div class="bid-progress">
+                        <p>剩余投资金额：<span class="amount">100,000.00</span> 元</p>
+                        <div class="progress-bar">
+                            <div class="pb-bg"></div>
+                            <div class="pb-percent" style="width: 50%"></div>
+                        </div>
+                    </div>
+                    <div><a href="javascript:void(0)"  class="btn btn-effect">立即投资</a></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section row">
+            <div class="media box">
+                <div class="top row">
+                    <div>
+                        <strong class="title">媒体中心</strong>
+                    </div>
+                    <div class="right">
+                        <a href="javascript:void(0)" class="more">更多</a>
+                    </div>
+                </div>
+                <div class="content block row">
+                    <div class="top-news">
+                         <div class="news-pic">
+                             <a href=""><img src="" alt=""></a>
+                         </div>
+                         <p class="news-txt"><a href="">董美怡：Fintech的本质仍是金融人工智能与大数据将为中小企业大数据将为中小企业大数据将为中小企业</a></p>
+                    </div>
+                    <div class="other-news">
+                        <ul class="news-list">
+                            <li><a href="">中信银行系统升级通知中信银行系统升级通知通知</a></li>
+                            <li><a href="">中信银行系统升级通知中信银行系</a></li>
+                            <li><a href="">中信银行系统升级通知中信银行系统升级</a></li>
+                            <li><a href="">中信银行系统升级通知中信银行系统升级通知通知</a></li>
+                            <li><a href="">中信银行系统升级通知中信银行系统升级通知通知</a></li>
+                            <li><a href="">中信银行系统升级通知中信银行系统升级通</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="announcement box">
+                <div class="top row">
+                    <div>
+                        <strong class="title">平台公告</strong>
+                    </div>
+                    <div class="right"><a href="javascript:void(0)" class="more">更多</a></div>
+                </div>
+                <div class="content block">
+                    <ul class="annc-list">
+                        <li><a href="">中信银行系统升级通知中信银行系统升级通知通知</a><span>2017-06-30 18:38:51</span></li>
+                        <li><a href="">中信银行系统升级通知中信银行系</a><span>2017-06-30 18:38:51</span></li>
+                        <li><a href="">中信银行系统升级通知中信银行系统升级</a><span>2017-06-30 18:38:51</span></li>
+                        <li><a href="">中信银行系统升级通知中信银行系统升级通知通知</a><span>2017-06-30 18:38:51</span></li>
+                        <li><a href="">中信银行系统升级通知中信银行系统升级通知通知</a><span>2017-06-30 18:38:51</span></li>
+                        <li><a href="">中信银行系统升级通知中信银行系统升级通</a><span>2017-06-30 18:38:51</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="cooperation section box">
+            <div class="top row">
+                <strong class="title">合作伙伴</strong>
+            </div>
+            <div class="content block">
+               <span><img src="/static/img/home/cooperation_1.png" alt="富友集团" title="富友集团"></span>
+               <span><img src="/static/img/home/cooperation_2.png" alt="百融金服" title="百融金服"></span>
+                <span><img src="/static/img/home/cooperation_3.png" alt="联信集团" title="联信集团"></span>
+                <span><img src="/static/img/home/cooperation_4.png" alt="诺诺金服" title="诺诺金服"></span>
+                <span><img src="/static/img/home/cooperation_5.png" alt="上海资信" title="上海资信"></span>
+                <span><img src="/static/img/home/cooperation_6.png" alt="鹏远征信" title="鹏远征信"></span>
+                <span><img src="/static/img/home/cooperation_7.png" alt="维氏盾征信" title="维氏盾征信"></span>
+                <span><img src="/static/img/home/cooperation_8.png" alt="启恒律师事务所" title="启恒律师事务所"></span>
+                <span><img src="/static/img/home/cooperation_9.png" alt="法大大" title="法大大"></span>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="content">
+            <div class="center">
+                <div class="container row">
+                    <div class="about-us">
+                        <h3><i class="icon icon-earth"></i>关于我们</h3>
+                        <ul>
+                            <li><a href="javascript:void(0)">公司简介</a></li>
+                            <li><a href="javascript:void(0)">团队介绍</a></li>
+                            <li><a href="javascript:void(0)">品牌故事</a></li>
+                            <li><a href="javascript:void(0)">联系我们</a></li>
+                        </ul>
+                    </div>
+                    <div class="security">
+                        <h3><i class="icon icon-safe"></i>安全保障</h3>
+                        <ul>
+                            <li><a href="javascript:void(0)">资金保障</a></li>
+                            <li><a href="javascript:void(0)">风控保障</a></li>
+                            <li><a href="javascript:void(0)">网络安全保障</a></li>
+                            <li><a href="javascript:void(0)">法律保障</a></li>
+                        </ul>
+                    </div>
+                    <div class="help-center">
+                        <h3><i class="icon icon-question"></i>帮助中心</h3>
+                        <ul>
+                            <li><a href="javascript:void(0)">充值提现</a></li>
+                            <li><a href="javascript:void(0)">投资流程</a></li>
+                            <li><a href="javascript:void(0)">借款流程</a></li>
+                            <li><a href="javascript:void(0)">资费说明</a></li>
+                        </ul>
+                    </div>
+                    <div class="hotline">
+                        <h3><i class="icon icon-cs"></i>客服热线</h3>
+                        <p class="tel">400-852-2220</p>
+                        <p>（工作时间：周一至周五9:00-18:00）</p>
+                        <p>借贷有风险，投资需谨慎!</p>
+                    </div>
+                    <div class="app">
+                        <h3><i class="icon icon-ercode"></i>扫描二维码下载app</h3>
+
+                    </div>
+                </div>
+                <div class="links">
+                    <h3><i class="icon icon-link"></i>友情链接</h3>
+                    <ul>
+                        <li><a href=""></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="center">
+                <p>上海融旌金融信息服务有限公司 Copyright © zwdai.com  All Rights Reserved |  沪ICP备17011115号-1</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/static/lib/jquery1.11.3.min.js"></script>
+    <script src="/static/lib/swiper/swiper-3.4.2.jquery.min.js"></script>
+    <script src="/static/lib/countUp.min.js"></script>
+    <script src="/static/js/common.js"></script>
+    <script src="/static/js/page/home.js"></script>
+</body>
+</html>

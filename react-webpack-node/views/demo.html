@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Demo</title>
+  <link rel="shortcut icon" href="/static/img/favicon.png">
+  <link rel="stylesheet" href="/static/css/common.css">
+  <style type="text/css" media="screen">
+     body{
+         margin: 10px;
+         background-color: #fff;
+     }
+     fieldset {
+        border: 1px solid #9e9e9e;
+     }
+  </style>
+</head>
+<body>
+    <fieldset>
+      <legend>CheckBox</legend>
+         Default：<label class="checkbox" data-ismall="1" data-status="1" data-role=""></label>
+         <label class="checkbox" data-status="1"></label>
+         <br>
+         <br>
+         Disabled：<label class="checkbox" data-ismall="1" data-status="2"></label>
+         <label class="checkbox" data-status="2"></label>
+         <br>
+         <br>
+         Group：<label class="checkbox" data-ismall="1" data-status="1" data-role="xxx"></label>
+         <label class="checkbox" data-ismall="1" data-status="0" data-role="xxx"></label>
+         <label class="checkbox" data-ismall="1" data-status="0" data-role="xxx"></label>
+  </fieldset>
+
+  <script src="/static/lib/jquery1.11.3.min.js" charset="utf-8"></script>
+  <script src="/static/js/common.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    $("label.checkbox").wtCheckBox();
+  </script>
+</body>
+</html>
