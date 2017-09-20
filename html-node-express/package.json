@@ -1,7 +1,7 @@
 {
-  "name": "react-webpack-node",
+  "name": "html-node-express",
   "version": "1.0.0",
-  "description": "react+webpack+node",
+  "description": "node+express后台服务和路由，前台html+css+js",
   "main": "app.js",
   "scripts": {
     "start": "",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "null"
+    "url": "https://github.com/wt9213/CodeDT/tree/master/react-webpack-node"
   },
   "keywords": [
     "null"
