@@ -4,16 +4,62 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="/static/img/favicon.png">
   <title>Test</title>
 </head>
 <body>
+  <script src="/static/lib/jquery1.11.3.min.js" charset="utf-8"></script>
   <script type="text/javascript">
-     alert("777");
-     window.location.href = "rongjingzwdai:// ";
+    function projectList(){
+       $.ajax({
+          type: "POST",
+          url: "/project",
+          data: {"c":"333","d":"555"},
+          success: function (data) {
+            $("body").text(JSON.stringify(data));
+          },
+          error: function (request) {
+            alert("请求失败");
+            $("body").text(JSON.stringify(request));
+            console.error(request);
+          }
+       });
+    }
 
-     window.setTimeout(function() {
-        window.location.href = "https://itunes.apple.com/us/app/zi-wei-dai/id1219853086 ";
-     }, 2000);
+    function loanList(){
+       $.ajax({
+          type: "POST",
+          url: "/loan",
+          data: {},
+          success: function (data) {
+            $("body").text(JSON.stringify(data));
+          },
+          error: function (request) {
+            alert("请求失败");
+            $("body").text(JSON.stringify(request));
+            console.error(request);
+          }
+       });
+    }
+
+    function getBaidu(){
+       $.ajax({
+          type: "POST",
+          url: "/baidu",
+          data: {},
+          success: function (data) {
+            $("body").html(data);
+          },
+          error: function (request) {
+            alert("请求失败");
+            $("body").html(request);
+            console.error(request);
+          }
+       });
+    }
+
+    loanList();
+    // getBaidu();
   </script>
 </body>
 </html>
