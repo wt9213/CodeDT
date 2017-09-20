@@ -23,6 +23,10 @@ router.get('/demo', function(req, res) {
   res.render('demo');
 });
 
+router.get('/test', function(req, res) {
+  res.render('test');
+});
+
 router.get('/404', function(req, res) {
   // res.send('<h1 style="text-align: center;font-weight: 300;color: #656565;-webkit-font-smoothing: antialiased;">---Page 404---</h1>');
   // res.sendfile("./views/404.html");
