@@ -1,7 +1,7 @@
 {
-  "name": "vue",
+  "name": "vue-multi-page",
   "version": "1.0.0",
-  "description": "A Vue.js project",
+  "description": "vue-cli 多页面",
   "author": "Wt",
   "private": true,
   "scripts": {
