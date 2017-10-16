@@ -1,6 +1,7 @@
 var path = require("path");
 var webpack = require('webpack');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
+// var OpenBrowserPlugin = require('open-browser-webpack-plugin');   //自动打开浏览器
 
 //引入glob
 var glob = require('glob');
