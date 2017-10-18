@@ -1,5 +1,5 @@
 // document.write("It works.");
 // require("!style!css!./style.css");
-require("./style.scss");
+require("../css/style.scss");
 // require("./style2.scss");
-document.write(require("./lib/content.js"));
+document.write(require("../lib/content.js"));

@@ -1,6 +1,7 @@
 var path = require("path");
 var webpack = require('webpack');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var HtmlWebpackPlugin = require("html-webpack-plugin");
 // var OpenBrowserPlugin = require('open-browser-webpack-plugin');   //自动打开浏览器
 
 //引入glob
@@ -9,7 +10,7 @@ var srcDir = path.resolve(process.cwd(), 'src');     //根目录文件
 //entries函数
 var entries= function () {
     var jsDir = path.resolve(srcDir, '');       //js打包入口文件 (js)
-    var entryFiles = glob.sync(jsDir + '/*.{js,jsx}');
+    var entryFiles = glob.sync(jsDir + '/js/*.{js,jsx}');
     var map = {};
 
     for (var i = 0; i < entryFiles.length; i++) {
@@ -19,6 +20,27 @@ var entries= function () {
     }
     return map;
 };
+//plugins
+var plugin=[];
+plugin.push(new webpack.optimize.CommonsChunkPlugin('./js/common.js'));
+plugin.push(new ExtractTextPlugin("./css/[name].css"));
+var pageFiles = glob.sync(srcDir+'/view/*.html');
+console.log(pageFiles);
+for(var chunkname in pageFiles){
+  var conf = {
+    filename: chunkname+'.html',
+    template: pageFiles[chunkname],
+    inject: false,
+    minify: {
+        removeComments: true, //移除HTML中的注释
+        collapseWhitespace: false  //删除空白符与换行符
+    },
+    chunks: ['common',chunkname],  //此处是载入提取的公共js，以及html同名js
+    hash: false,
+  }
+  // conf.title = chunkname;
+  plugin.push(new HtmlWebpackPlugin(conf));
+}
 
 module.exports = {
   // entry: {
@@ -40,8 +62,9 @@ module.exports = {
           {test: /\.scss$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader!sass-loader")}
       ]
   },
-  plugins: [
-      new webpack.optimize.CommonsChunkPlugin('./js/common.js'),
-      new ExtractTextPlugin("./css/[name].css")
-  ]
+  plugins:plugin
+  // plugins: [
+  //     new webpack.optimize.CommonsChunkPlugin('./js/common.js'),
+  //     new ExtractTextPlugin("./css/[name].css")
+  // ]
 };
