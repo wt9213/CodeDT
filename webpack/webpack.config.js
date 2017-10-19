@@ -1,16 +1,16 @@
 var path = require("path");
-var webpack = require('webpack');
+var webpack = require("webpack");
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 // var OpenBrowserPlugin = require('open-browser-webpack-plugin');   //自动打开浏览器
 
 //引入glob
-var glob = require('glob');
-var srcDir = path.resolve(process.cwd(), 'src');     //根目录文件
+var glob = require("glob");
+var srcDir = path.resolve(process.cwd(), "src");     //根目录文件
 //entries函数
 var entries= function () {
-    var jsDir = path.resolve(srcDir, '');       //js打包入口文件 (js)
-    var entryFiles = glob.sync(jsDir + '/js/*.{js,jsx}');
+    var jsDir = path.resolve(srcDir, "");       //js打包入口文件 (js)
+    var entryFiles = glob.sync(jsDir + "/js/*.{js,jsx}");
     var map = {};
 
     for (var i = 0; i < entryFiles.length; i++) {
@@ -22,18 +22,17 @@ var entries= function () {
 };
 //plugins
 var plugin=[];
-plugin.push(new webpack.optimize.CommonsChunkPlugin('./js/common.js'));
+plugin.push(new webpack.optimize.CommonsChunkPlugin("./js/common.js"));
 plugin.push(new ExtractTextPlugin("./css/[name].css"));
-var pageFiles = glob.sync(srcDir+'/view/*.html');
-console.log(pageFiles);
+var pageFiles = glob.sync(srcDir+"/view/*.html");
 for(var chunkname in pageFiles){
-  console.log(path.basename(pageFiles[chunkname],".html")+"+",pageFiles[chunkname].replace(".html",".js").replace("view","js"));
   var conf = {
-    filename: path.basename(pageFiles[chunkname],".html")+'.html',
+    filename: path.basename(pageFiles[chunkname],".html")+".html",
     template: pageFiles[chunkname],
     // inject: true,
-    chunks: ['common',path.basename(pageFiles[chunkname],".html")],  //此处是载入提取的公共js，以及html同名js
-    hash: false,
+    chunks: ["common",path.basename(pageFiles[chunkname],".html")],  //此处是载入提取的公共js，以及html同名js
+    hash: true,
+    title:"WebpackPage",
     minify: {
         removeComments: true, //移除HTML中的注释
         collapseWhitespace: false  //删除空白符与换行符
@@ -41,7 +40,6 @@ for(var chunkname in pageFiles){
   }
   // conf.title = chunkname;
   plugin.push(new HtmlWebpackPlugin(conf));
-  console.log(conf.chunks);
 }
 module.exports = {
   // entry: {
@@ -50,8 +48,8 @@ module.exports = {
   // },
   entry: entries(),
   output: {
-      path: path.join(__dirname, 'dist'),     //打包输出的路径
-      filename: './js/[name].js',               //打包后的名字
+      path: path.join(__dirname, "dist"),     //打包输出的路径
+      filename: "./js/[name].js",               //打包后的名字
       publicPath: "/"                //html引用路径，在这里是本地地址。
   },
   module: {
