@@ -24,7 +24,7 @@ var jsEentry=entries();
 //plugins
 var plugins=function(){
   var plugin=[];
-  plugin.push(new webpack.optimize.CommonsChunkPlugin("./js/common.js"));
+  plugin.push(new webpack.optimize.CommonsChunkPlugin({name: "common", filename: "./js/common.js"}));
   plugin.push(new ExtractTextPlugin("./css/[name].css"));
   var pageFiles = glob.sync(srcDir+"/view/*.html");
   for(var chunkname in pageFiles){
