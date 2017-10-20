@@ -55,7 +55,7 @@ var config = {
   output: {
       path: path.join(__dirname, "dist"),     //打包输出的路径
       filename: "./js/[name].js",               //打包后的名字
-      publicPath: "/"                //html引用路径，在这里是本地地址。
+      publicPath: ""                //html引用路径，在这里是本地地址。
   },
   module: {
       loaders: [
