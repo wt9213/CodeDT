@@ -20,33 +20,38 @@ var entries= function () {
     }
     return map;
 };
+var jsEntry=entries();
 //plugins
-var plugin=[];
-plugin.push(new webpack.optimize.CommonsChunkPlugin("./js/common.js"));
-plugin.push(new ExtractTextPlugin("./css/[name].css"));
-var pageFiles = glob.sync(srcDir+"/view/*.html");
-for(var chunkname in pageFiles){
-  var conf = {
-    filename: path.basename(pageFiles[chunkname],".html")+".html",
-    template: pageFiles[chunkname],
-    // inject: true,
-    chunks: ["common",path.basename(pageFiles[chunkname],".html")],  //此处是载入提取的公共js，以及html同名js
-    hash: true,
-    title:"WebpackPage",
-    minify: {
-        removeComments: true, //移除HTML中的注释
-        collapseWhitespace: false  //删除空白符与换行符
-    },
+var plugins=function(){
+  var plugin=[];
+  plugin.push(new webpack.optimize.CommonsChunkPlugin("./js/common.js"));
+  plugin.push(new ExtractTextPlugin("./css/[name].css"));
+  var pageFiles = glob.sync(srcDir+"/view/*.html");
+  for(var chunkname in pageFiles){
+    var conf = {
+      filename: path.basename(pageFiles[chunkname],".html")+".html",
+      template: pageFiles[chunkname],
+      inject: true,
+      chunks: ["common",path.basename(pageFiles[chunkname],".html")],  //此处是载入提取的公共js，以及html同名js
+      hash: true,
+      title:"WebpackPage",
+      minify: {
+          removeComments: true, //移除HTML中的注释
+          collapseWhitespace: false  //删除空白符与换行符
+      },
+    }
+    // conf.title = chunkname;
+    plugin.push(new HtmlWebpackPlugin(conf));
   }
-  // conf.title = chunkname;
-  plugin.push(new HtmlWebpackPlugin(conf));
+  return plugin;
 }
-module.exports = {
+
+var config = {
   // entry: {
   //     index: "./src/index.js",
   //     index2: "./src/index2.js"
   // },
-  entry: entries(),
+  entry: jsEntry,
   output: {
       path: path.join(__dirname, "dist"),     //打包输出的路径
       filename: "./js/[name].js",               //打包后的名字
@@ -61,10 +66,12 @@ module.exports = {
           {test: /\.scss$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader!sass-loader")}
       ]
   },
-  plugins:plugin
+  plugins:plugins()
   // plugins: [
   //     new webpack.optimize.CommonsChunkPlugin('./js/common.js'),
   //     new ExtractTextPlugin("./css/[name].css"),
   //     new HtmlWebpackPlugin()
   // ]
 };
+
+module.exports = config;
