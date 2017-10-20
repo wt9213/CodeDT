@@ -20,7 +20,7 @@ var entries= function () {
     }
     return map;
 };
-var jsEntry=entries();
+var jsEentry=entries();
 //plugins
 var plugins=function(){
   var plugin=[];
@@ -51,7 +51,7 @@ var config = {
   //     index: "./src/index.js",
   //     index2: "./src/index2.js"
   // },
-  entry: jsEntry,
+  entry: jsEentry,
   output: {
       path: path.join(__dirname, "dist"),     //打包输出的路径
       filename: "./js/[name].js",               //打包后的名字
