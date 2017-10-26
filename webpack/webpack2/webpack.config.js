@@ -72,7 +72,10 @@ var config = {
           },
           {
             test: /\.scss$/,
-            use: ["style-loader", "css-loader","sass-loader"]
+            use:ExtractTextPlugin.extract({
+              fallback: "style-loader",
+              use: "css-loader!sass-loader",
+            })
           }
       ]
   },
