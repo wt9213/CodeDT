@@ -3,6 +3,7 @@ var app = express();
 var request = require('request');
 var fs= require("fs");
 var ejs=require('ejs');
+// const opn = require('opn');  //自动打开浏览器
 
 app.use(express.static('public'));
 
