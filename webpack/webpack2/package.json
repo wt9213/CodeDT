@@ -1,10 +1,11 @@
 {
-  "name": "webpack_test",
+  "name": "webpack2_test",
   "version": "1.0.0",
   "description": "test",
   "main": "entry.js",
   "dependencies": {},
   "devDependencies": {
+    "autoprefixer-loader": "^3.2.0",
     "babel-core": "^6.20.0",
     "babel-loader": "^7.1.2",
     "css-loader": "^0.26.1",
