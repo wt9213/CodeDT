@@ -69,7 +69,8 @@ var config = {
               loader:"url-loader",
               options: {
                   limit: '8192',
-                  name:"img/[name].[hash:8].[ext]",
+                  name:"/img/[name].[hash:8].[ext]",
+                  publicPath:"..",  //打包文件中引用文件的路径前缀
               }
             }]
           },
