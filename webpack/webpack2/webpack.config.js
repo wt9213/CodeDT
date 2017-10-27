@@ -30,7 +30,7 @@ var plugins=function(){
     name: "common",
     filename: "./js/common.[chunkhash:8].js"
   }));
-  plugin.push(new ExtractTextPlugin("./css/[name].[chunkhash:8].css"));
+  plugin.push(new ExtractTextPlugin("./css/[name].[contenthash:8].css"));
   var pageFiles = glob.sync(srcDir+"/view/*.html");
   for(var chunkname in pageFiles){
     var conf = {
