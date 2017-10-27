@@ -12,4 +12,4 @@ if(utils.isPC()){
 }
 
 var template = document.getElementsByTagName("body")[0];
-template.innerHTML="<img src="+jpg+"><img src="+png+">";
+template.innerHTML="<img src="+jpg+"><br><img src="+png+">";

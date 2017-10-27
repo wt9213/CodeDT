@@ -28,9 +28,9 @@ var plugins=function(){
   var plugin=[];
   plugin.push(new webpack.optimize.CommonsChunkPlugin({
     name: "common",
-    filename: "./js/common.js"
+    filename: "./js/common.[chunkhash:8].js"
   }));
-  plugin.push(new ExtractTextPlugin("./css/[name].css"));
+  plugin.push(new ExtractTextPlugin("./css/[name].[chunkhash:8].css"));
   var pageFiles = glob.sync(srcDir+"/view/*.html");
   for(var chunkname in pageFiles){
     var conf = {
@@ -38,7 +38,7 @@ var plugins=function(){
       template: pageFiles[chunkname],
       inject: true,
       chunks: ["common",path.basename(pageFiles[chunkname],".html")],  //此处是载入提取的公共js，以及html同名js
-      hash: true,
+      hash: false,
       title:"WebpackPage",
       minify: {
           removeComments: true, //移除HTML中的注释
@@ -54,7 +54,7 @@ var config = {
   entry: jsEentry,
   output: {
       path: path.join(__dirname, "dist"),     //打包输出的路径
-      filename: "./js/[name].js",               //打包后的名字
+      filename: "./js/[name].[chunkhash:8].js",               //打包后的名字
       publicPath: ""                //html引用路径，在这里是本地地址。
   },
   module: {
