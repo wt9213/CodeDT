@@ -25,12 +25,13 @@ var jsEentry=entries();
 
 //plugins
 var plugins=function(){
-  var plugin=[];
-  plugin.push(new webpack.optimize.CommonsChunkPlugin({
-    name: "common",
-    filename: "./js/common.[chunkhash:8].js"
-  }));
-  plugin.push(new ExtractTextPlugin("./css/[name].[contenthash:8].css"));
+  var plugin=[
+    new webpack.optimize.CommonsChunkPlugin({
+      name: "common",
+      filename: "./js/common.[chunkhash:8].js"
+    }),
+    new ExtractTextPlugin("./css/[name].[contenthash:8].css")
+  ];
   var pageFiles = glob.sync(srcDir+"/view/*.html");
   for(var chunkname in pageFiles){
     var conf = {
@@ -65,15 +66,16 @@ var config = {
           },
           {
             test: /\.(jpg|png)$/,
-            use: [{
-              loader:"url-loader",
-              options: {
-                  limit: '8192',
-                  name:"/img/[name].[hash:8].[ext]",
-                  publicPath:"..",  //打包文件中引用文件的路径前缀
-                  // outputPath:"" //输出文件路径前缀(如 /img/xxx)
-              }
-            }]
+            use: 'url-loader?limit=8192&name=/img/[name].[hash:8].[ext]&publicPath=..'
+            // use: [{    //编译过程有问题  https://github.com/webpack/loader-utils/issues/56
+            //   loader:"url-loader",
+            //   options: {
+            //       limit: '8192',
+            //       name:"/img/[name].[hash:8].[ext]",
+            //       publicPath:"..",  //打包文件中引用文件的路径前缀
+            //       // outputPath:"" //输出文件路径前缀(如 /img/xxx)
+            //   }
+            // }]
           },
           {
             test: /\.scss$/,
