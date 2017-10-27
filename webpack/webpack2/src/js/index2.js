@@ -2,9 +2,14 @@ require("../css/reset.scss");
 require("../css/style2.scss");
 // import utils from "../lib/utils.js"
 var utils=require("../lib/utils.js");
+var jpg=require("../assets/img/kakaxi.jpg");
+var png=require("../assets/img/public/plus.png");
+
 if(utils.isPC()){
-  alert("isPC")
+  alert("Is PC")
 }else {
-  alert("not isPC")
+  alert("Not PC")
 }
-document.write("It works.");
+
+var template = document.getElementsByTagName("body")[0];
+template.innerHTML="<img src="+jpg+"><img src="+png+">";

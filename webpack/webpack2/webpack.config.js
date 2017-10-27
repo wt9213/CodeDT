@@ -7,6 +7,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 //引入glob
 var glob = require("glob");
 var srcDir = path.resolve(process.cwd(), "src");     //根目录文件
+
 //entries函数
 var entries= function () {
     var jsDir = path.resolve(srcDir, "");       //js打包入口文件 (js)
@@ -21,6 +22,7 @@ var entries= function () {
     return map;
 };
 var jsEentry=entries();
+
 //plugins
 var plugins=function(){
   var plugin=[];
@@ -66,7 +68,8 @@ var config = {
             use: [{
               loader:"url-loader",
               options: {
-                  limit: '1024'
+                  limit: '8192',
+                  name:"img/[name].[hash:8].[ext]",
               }
             }]
           },
