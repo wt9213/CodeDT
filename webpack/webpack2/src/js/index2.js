@@ -1,7 +1,7 @@
 require("../css/reset.scss");
 require("../css/style2.scss");
-// import utils from "../lib/utils.js"
-var utils=require("../lib/utils.js");
+import utils from "../lib/utils.js"
+// var utils=require("../lib/utils.js");
 var jpg=require("../assets/img/kakaxi.jpg");
 var png=require("../assets/img/public/plus.png");
 
