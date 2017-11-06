@@ -2,6 +2,7 @@ var path = require("path");
 var webpack = require("webpack");
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 // var OpenBrowserPlugin = require('open-browser-webpack-plugin');   //自动打开浏览器
 
 //引入glob
@@ -26,6 +27,14 @@ var jsEentry=entries();
 //plugins
 var plugins=function(){
   var plugin=[
+    new CleanWebpackPlugin(
+         ['dist/css/*.*.css','dist/js/*.*.js','dist/img/'],　  //匹配删除的文件
+         {
+             root: __dirname,       　　　　　　　　　　//根目录
+             verbose:  true,        　　　　　　　　　　//开启在控制台输出信息
+             dry:      false        　　　　　　　　　　//启用删除文件
+         }
+     ),
     new webpack.optimize.CommonsChunkPlugin({
       name: "common",
       filename: "./js/common.[chunkhash:8].js"
