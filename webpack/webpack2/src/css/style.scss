@@ -3,4 +3,16 @@ body{
   background-color: $bg_color;
   color: #ffffff;
   font-size: 20px;
+  box-sizing: border-box;
+}
+.icon-plus{
+  background-image: url(../assets/img/public/plus.png);
+  background-repeat: no-repeat;
+  min-height: 22px;
+}
+.pic-you{
+  background-image: url(../assets/img/you.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  min-height: 120px;
 }
