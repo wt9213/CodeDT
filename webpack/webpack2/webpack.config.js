@@ -39,7 +39,12 @@ var plugins=function(){
       name: "common",
       filename: "js/common.[chunkhash:8].js"
     }),
-    new ExtractTextPlugin("css/[name].[contenthash:8].css")
+    new ExtractTextPlugin("css/[name].[contenthash:8].css"),
+    // new webpack.optimize.UglifyJsPlugin({    //压缩代码,线上压缩
+    //   compress: {
+    //     warnings: false
+    //   }
+    // })
   ];
   var pageFiles = glob.sync(srcDir+"/view/*.html");
   for(var chunkname in pageFiles){
