@@ -28,7 +28,7 @@ var jsEentry=entries();
 var plugins=function(){
   var plugin=[
     new CleanWebpackPlugin(
-         ['dist/css/*.*.css','dist/js/*.*.js','dist/img/'],　  //匹配删除的文件
+         ['dist/css/*','dist/js/*','dist/img/*'],　  //匹配删除的文件
          {
              root: __dirname,       　　　　　　　　　　//根目录
              verbose:  true,        　　　　　　　　　　//开启在控制台输出信息
@@ -37,14 +37,14 @@ var plugins=function(){
      ),
     new webpack.optimize.CommonsChunkPlugin({
       name: "common",
-      filename: "./js/common.[chunkhash:8].js"
+      filename: "js/common.[chunkhash:8].js"
     }),
-    new ExtractTextPlugin("./css/[name].[contenthash:8].css")
+    new ExtractTextPlugin("css/[name].[contenthash:8].css")
   ];
   var pageFiles = glob.sync(srcDir+"/view/*.html");
   for(var chunkname in pageFiles){
     var conf = {
-      filename: path.basename(pageFiles[chunkname],".html")+".html",
+      filename: "view/"+path.basename(pageFiles[chunkname],".html")+".html",
       template: pageFiles[chunkname],
       inject: true,
       chunks: ["common",path.basename(pageFiles[chunkname],".html")],  //此处是载入提取的公共js，以及html同名js
@@ -64,8 +64,8 @@ var config = {
   entry: jsEentry,
   output: {
       path: path.join(__dirname, "dist"),     //打包输出的路径
-      filename: "./js/[name].[chunkhash:8].js",               //打包后的名字
-      publicPath: ""                //html引用路径，在这里是本地地址。
+      filename: "js/[name].[chunkhash:8].js", //打包后的名字
+      publicPath: "../"                //html引用资源路径的前缀
   },
   module: {
       rules: [
@@ -75,13 +75,13 @@ var config = {
           },
           {
             test: /\.(jpg|png)$/,
-            use: 'url-loader?limit=8192&name=/img/[name].[hash:8].[ext]&publicPath=..'
+            use: 'url-loader?limit=8192&name=img/[name].[hash:8].[ext]&publicPath='
             // use: [{    //编译过程有问题  https://github.com/webpack/loader-utils/issues/56
             //   loader:"url-loader",
             //   options: {
             //       limit: '8192',
-            //       name:"/img/[name].[hash:8].[ext]",
-            //       publicPath:"..",  //打包文件中引用文件的路径前缀
+            //       name:"img/[name].[hash:8].[ext]",
+            //       publicPath:"",  //打包文件中引用文件的路径前缀
             //       // outputPath:"" //输出文件路径前缀(如 /img/xxx)
             //   }
             // }]
@@ -89,6 +89,7 @@ var config = {
           {
             test: /\.scss$/,
             use:ExtractTextPlugin.extract({
+              publicPath: "../" ,  //css里引用外部资源路径的前缀
               fallback: "style-loader",
               use: ["css-loader","autoprefixer-loader","sass-loader"]
             })
