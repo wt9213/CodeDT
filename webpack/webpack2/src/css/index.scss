@@ -1,9 +1,11 @@
-$bg_color:#59bfa3;
 body{
-  background-color: $bg_color;
+  background-color: #353535;
   color: #ffffff;
   font-size: 20px;
-  box-sizing: border-box;
+  margin: 15px;
+}
+p{
+  margin: 20px 0;
 }
 .icon-plus{
   background-image: url(../assets/img/public/plus.png);
@@ -14,5 +16,8 @@ body{
   background-image: url(../assets/img/you.jpg);
   background-repeat: no-repeat;
   background-size: 100% auto;
-  min-height: 120px;
+  min-height: 178px;
+}
+.m-15{
+  margin: 15px;
 }
