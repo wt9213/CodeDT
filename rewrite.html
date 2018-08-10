@@ -14,7 +14,6 @@
         var tempEval = eval;
         var tempwrite = document.write;
 
-
         //重写eval
         eval = function(str) {
             alert('eval:'+str);
@@ -36,6 +35,22 @@
         eval('document.write("<h1>Test eval 666</h1>");');
         document.write("<h1>This is true string too</h1>");
         document.write("<h1>This is true string too 666</h1>");
+    </script>
+
+    <script>
+    var jsAppendChild=Node.prototype.appendChild;
+
+    // 重寫
+    Node.prototype.appendChild=function(){
+        console.log(arguments);
+        jsAppendChild.apply(this, arguments);
+    }
+
+    var p = document.createElement("p");
+    var bodyE = document.getElementsByTagName("body")[0];
+    p.innerText="test 123456789"
+
+    bodyE.appendChild(p);
     </script>
 
 
