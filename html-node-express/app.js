@@ -9,6 +9,7 @@ app.use(express.static('public'));
 
 app.engine('html', ejs.__express);  // app.engine('html', ejs.renderFile);
 app.set('view engine', 'html');
+app.set('views', 'views');    // 设置views路径
 
 var mainRouter = require('./routes/main.js');
 app.use('/', mainRouter);
@@ -72,7 +73,7 @@ app.post('/baidu', function (req, res) {
 });
 
 
-var server = app.listen(3000, function () {
+var server = app.listen(3001, function () {
   var host = server.address().address;
   var port = server.address().port;
 
